@@ -1,3 +1,11 @@
+const text = `two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen`;
+
 let total = 0;
 
 const objectNumbers = {
@@ -11,14 +19,6 @@ const objectNumbers = {
     'eight': '8',
     'nine': '9'
 }
-
-const text = `two1nine
-eightwothree
-abcone2threexyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstsixteen`;
 
 function findWordsPositions(inputString, objectNumbers) {
     const wordsPositions = [];
@@ -53,8 +53,6 @@ text.split("\n").forEach((line) => {
 
     let numb = newLine.replaceAll(/[a-z]/gi, "").split("");
     total += Number(numb[0] + numb[numb.length -1]);
-
-    console.log(Number(numb[0] + numb[numb.length -1]));
 })
 
 console.log("Total = " + total);

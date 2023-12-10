@@ -38,8 +38,6 @@ text.split("\n").forEach((line) => {
 
     if (impossible === 0) {
         possibleGame += parseInt(match[2]);
-    } else {
-        // console.log(`error on game ${parseInt(match[2])}`);
     }
 })
 
