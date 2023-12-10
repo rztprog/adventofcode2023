@@ -27,4 +27,5 @@ text.split("\n").forEach((line) => {
     sumSets += Object.values(lineDecompose).reduce((acc, value) => acc * value);
 })
 
-console.log(sumSets);
+console.log("Total = " + sumSets);
+

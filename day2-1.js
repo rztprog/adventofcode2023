@@ -41,4 +41,4 @@ text.split("\n").forEach((line) => {
     }
 })
 
-console.log(possibleGame);
+console.log("Total = " + possibleGame);
