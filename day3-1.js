@@ -1,4 +1,4 @@
-let text = `467..114..
+const text = `467..114..
 ...*......
 ..35..633.
 ......#...
@@ -22,7 +22,7 @@ for (let line = 0; line < lines.length; line++) {
     })
 
     elements.forEach((element) => {
-        if (!line == 0) {
+        if (line > 0) {
             let indexStart = element.indexOnLine;
             let indexEnd = element.indexOnLine + element.number.length;
 
@@ -37,7 +37,7 @@ for (let line = 0; line < lines.length; line++) {
             element['charsAround'] += lines[line - 1].slice(indexStart, indexEnd)
         }
 
-        if (!element.indexOnLine == 0) {
+        if (element.indexOnLine > 0) {
             element['charsAround'] += lines[line].slice(element.indexOnLine - 1, element.indexOnLine);
         }
 
