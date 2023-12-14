@@ -18,7 +18,7 @@ for (let line = 0; line < lines.length; line++) {
     const elements = [];
 
     Array.from(string.matchAll(starsRegex), match => match).forEach((star) => {
-        elements.push({indexOnLine: star.index, allAround: '', foundedNumber: []});
+        elements.push({indexOnLine: star.index, allAround: ''});
     })
 
     elements.forEach((element) => {
