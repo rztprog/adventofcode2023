@@ -17,9 +17,9 @@ text.split("\n").forEach((line) => {
     card[0] = card[0].trim().split(/\s+/).map(Number)
     card[1] = card[1].trim().split(/\s+/).map(Number)
 
-    for (const winningNumber in card[0]) {
-        for (const cardNumber in card[1]) {
-            if (card[0][winningNumber] == card[1][cardNumber]) {
+    for (const winningNumbers in card[0]) {
+        for (const cardNumbers in card[1]) {
+            if (card[0][winningNumbers] == card[1][cardNumbers]) {
                 (points < 2) ? points++ : points *= 2 
             }
         }
