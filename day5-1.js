@@ -61,5 +61,27 @@ if (currentSection.length > 0) {
     sections.push(currentSection);
 }
 
-console.log(seeds);
+console.log("---SECTIONS---");
 console.log(sections);
+console.log("---SECTIONS---");
+
+seeds.forEach(seed => {
+    let actualSeed = seed;
+
+    sections.forEach(section => {
+
+
+        section.forEach(list => {
+
+            destinationRange = list[0];
+            sourceRangeStart = list[1];
+            rangeLength = list[2];
+
+        })
+
+
+    })
+
+
+
+});
