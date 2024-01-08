@@ -32,10 +32,10 @@ humidity-to-location map:
 60 56 37
 56 93 4`
 
-const locationNumbers = [];
 const seeds = text.match(/seeds:\s(.*)/)[1].split(/\s+/).map(Number)
 const lines = text.split('\n');
 const sections = [];
+let locationNumber = seeds[0];
 let currentSection = [];
 let destinationRangeStart, sourceRangeStart, rangeLength;
 
@@ -76,7 +76,10 @@ seeds.forEach(seed => {
         }
     })
 
-    locationNumbers.push(actualNumber);
+    if (locationNumber > actualNumber) {
+        locationNumber = actualNumber
+    }
 });
 
-console.log("Lowest = " + Math.min(...locationNumbers));
+console.log(locationNumber);
+console.log("Lowest = " + locationNumber);
