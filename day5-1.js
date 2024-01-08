@@ -37,6 +37,7 @@ const seeds = text.match(/seeds:\s(.*)/)[1].split(/\s+/).map(Number)
 const lines = text.split('\n');
 const sections = [];
 let currentSection = [];
+let destinationRangeStart, sourceRangeStart, rangeLength;
 
 for (let i = 0; i < lines.length; i++) {
     let line = lines[i].trim();
