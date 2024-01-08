@@ -1,6 +1,3 @@
-// IN PROGRESS
-
-
 const text = `seeds: 79 14 55 13
 
 seed-to-soil map:
@@ -61,27 +58,24 @@ if (currentSection.length > 0) {
     sections.push(currentSection);
 }
 
-console.log("---SECTIONS---");
-console.log(sections);
-console.log("---SECTIONS---");
-
 seeds.forEach(seed => {
-    let actualSeed = seed;
-
+    let actualNumber = seed;
+    
     sections.forEach(section => {
-
-
-        section.forEach(list => {
-
-            destinationRange = list[0];
-            sourceRangeStart = list[1];
-            rangeLength = list[2];
-
-        })
-
-
+        
+        for (let index = 0; index < section.length; index++) {
+            destinationRangeStart = section[index][0];
+            sourceRangeStart = section[index][1];
+            rangeLength = section[index][2];
+            
+            if (actualNumber >= sourceRangeStart && actualNumber <= sourceRangeStart + (rangeLength - 1)) {
+                actualNumber = destinationRangeStart + (actualNumber - sourceRangeStart);
+                break;
+            }
+        }
     })
 
-
-
+    locationNumbers.push(actualNumber);
 });
+
+console.log("Lowest = " + Math.min(...locationNumbers));
