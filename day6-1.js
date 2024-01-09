@@ -14,11 +14,7 @@ for (let index = 0; index < duration.length; index++) {
         }
     }
 
-    if (marginError == 0) {
-        marginError = recordBeat
-    } else {
-        marginError *= recordBeat
-    }
+    (marginError == 0) ? marginError = recordBeat : marginError *= recordBeat
 }
 
 console.log("Number of ways = " + marginError);
