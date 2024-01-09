@@ -81,5 +81,4 @@ seeds.forEach(seed => {
     }
 });
 
-console.log(locationNumber);
 console.log("Lowest = " + locationNumber);
