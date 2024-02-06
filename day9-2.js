@@ -23,21 +23,21 @@ const sequencesPredictor = (firstSequence) => {
     return sequences.reverse();
 }
 
-const sequencesExtrapolator = (sequencesPredictor) => {
+const sequencesBackExtrapolator = (sequencesPredictor) => {
     sequencesPredictor[0].push(0);
 
     for (let index = 1; index < sequencesPredictor.length; index++) {
-        const lastValue = sequencesPredictor[index][sequencesPredictor[index].length - 1];
-        const lastPreviousValue = sequencesPredictor[index - 1][sequencesPredictor[index].length - 1];
+        const lastValue = sequencesPredictor[index][0];
+        const lastPreviousValue = sequencesPredictor[index - 1][0];
     
-        sequencesPredictor[index].push(lastValue + lastPreviousValue);
+        sequencesPredictor[index].unshift(lastValue - lastPreviousValue);
     }
     
-    return sequencesPredictor[sequencesPredictor.length - 1].pop();
+    return sequencesPredictor[sequencesPredictor.length - 1].shift();
 }
 
 for (const line of lines) {
-    extrapolatedValues += sequencesExtrapolator(sequencesPredictor(splitter(line)))
+    extrapolatedValues += sequencesBackExtrapolator(sequencesPredictor(splitter(line)))
 }
 
 console.log("Sum = " + extrapolatedValues);
